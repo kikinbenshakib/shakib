@@ -1,0 +1,223 @@
+<html>
+<meta charset="utf-8">
+<title>
+	UK Product Pricing Calculator.
+</title>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping Charge Calculator</title>
+
+<script language="javascript" type="text/javascript">
+function multiply(){
+b=Number(document.calculator.number1.value);
+e=Number(document.calculator.number2.value);
+d=Number(document.calculator.number3.value);
+k=(e*b)/100
+m=((4.20*d)/1000);
+c="£ "+((k+e)+m).toFixed(2);
+document.calculator.total.value=c;
+
+}
+</script>
+<script language="javascript" type="text/javascript">
+function addition(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a+b;
+document.calculator.total.value=c;
+}
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+function subtraction(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a-b;
+document.calculator.total.value=c;
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+function division(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a/b;
+document.calculator.total.value=c;
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+function modulus(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a%b;
+document.calculator.total.value=c;
+}
+</script>
+
+<style type="text/css">
+	.text1{
+	font-size: 25;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #de950fdb;
+	}
+
+	.pad{
+		padding-right: 22%;
+    	padding-left: 22%;
+    	text-align: center;
+	}
+
+	.frm{
+		border: 2px solid #d0d0d0;
+    	padding: 15px;
+	}
+
+	.brd{
+		border: 0px !important;
+		text-align: center;
+    	font-size: 25px;
+    	font-weight: 600;
+    	color: palevioletred;
+	}
+
+	.brd1{
+		border: 1px solid #e0e0e0;
+		text-align: center;
+    	font-size: 25px;
+    	font-weight: 600;
+    	color: #717171;
+	}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.button {
+    border-radius: 8px;
+    background-color: #f4811e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 50%;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<div class="pad"><br> <span class="text1">Product Pricing Calculator &pound;</span><br><br>
+
+	<div class="frm">
+		<form name="calculator">
+			<label>Enter Total Price</label>
+		      <input class="brd1" type="text" name="number2" placeholder="&pound;" required> <br>
+		    <label>Enter Percentage Value </label>
+		      <input class="brd1" type="text" name="number1" placeholder="0%" required> <br>
+		    <label>Enter Total Weight </label>
+		      <input class="brd1" type="text" name="number3" placeholder="gm" required> <br>
+		    <label>Total Price:</label>  
+		    <input class="brd" type="text" name="total"> <br>
+		<!-- <input type="button" value="ADD" onclick="javascript:addition();">
+		<input type="button" value="SUB" onclick="javascript:subtraction();"> -->
+		<input class="button" type="button" value="Check" onclick="javascript:multiply();">
+		<!-- <input type="button" value="DIV" onclick="javascript:division();">
+		<input type="button" value="MOD" onclick="javascript:modulus();"> -->
+
+		</form>
+	</div>
+</div>
+
+<br>
+<br>
+
+<div class="pad"><br> <span class="text1">Currency Covert Calculator &#2547;</span><br><br>
+
+	<div class="frm">
+
+		<form name="Calcu">
+			<label>Total Price</label>
+		      <input class="brd1" id="box1" type="text" oninput="calculate();" placeholder="&pound;" required> <br>
+		    <label>Currency Rate </label>
+		      <input class="brd1" id="box2" type="text" oninput="calculate();" placeholder="&#2547; " required> <br>
+		    <label>Get Total Price:</label>  
+		    <input class="brd" type="text" id="result" name="total"> <br>
+
+		</form>
+
+<script>
+    	function calculate() 
+    	{
+        var myBox1 = document.getElementById('box1').value; 
+        var myBox2 = document.getElementById('box2').value;
+        var result = document.getElementById('result');
+
+        var myResult = (myBox1 * myBox2).toFixed(2);
+        document.getElementById('result').value = '৳ '+ myResult;
+    	}
+</script>
+
+
+
+	</div>
+</div>
+
+
+</body>
+</html>

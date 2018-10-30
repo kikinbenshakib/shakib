@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping Charge Calculator</title>
+
+<script language="javascript" type="text/javascript">
+function multiply(){
+b=Number(document.calculator.number2.value);
+e=Number(document.calculator.number4.value);
+c="£ "+(e+((4.20*b)/1000));
+document.calculator.total.value=c;
+}
+</script>
+
+
+<script language="javascript" type="text/javascript">
+function addition(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a+b;
+document.calculator.total.value=c;
+}
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+function subtraction(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a-b;
+document.calculator.total.value=c;
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+function division(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a/b;
+document.calculator.total.value=c;
+}
+</script>
+
+<script language="javascript" type="text/javascript">
+function modulus(){
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+c=a%b;
+document.calculator.total.value=c;
+}
+</script>
+
+<style type="text/css">
+	.text1{
+	font-size: 25;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #de950fdb;
+	}
+
+	.pad{
+		padding-right: 30%;
+    	padding-left: 30%;
+    	text-align: center;
+	}
+
+	.frm{
+		border: 2px solid #d0d0d0;
+    	padding: 15px;
+	}
+
+	.brd{
+		border: 0px !important;
+		text-align: center;
+    	font-size: 25px;
+    	font-weight: 600;
+    	color: palevioletred;
+	}
+
+	.brd1{
+		border: 1px solid #e0e0e0;
+		text-align: center;
+    	font-size: 25px;
+    	font-weight: 600;
+    	color: #717171;
+	}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.button {
+    border-radius: 8px;
+    background-color: #f4811e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 13px;
+    width: 190px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<div class="pad"><br> <span class="text1">Shipping Charge Calculate Including Products Price</span><br><br>
+
+	<div class="frm">
+		<form name="calculator">
+			<label>Enter Total Price</label>
+		      <input class="brd1" type="text" name="number4" placeholder="&pound;" required> <br>
+		    <label>Enter Weight</label>
+		      <input class="brd1" type="text" name="number2" placeholder="gm" required> <br>
+		    <label>Get Total Price:</label>  
+		    <input class="brd" type="text" name="total"> <br>
+		<!-- <input type="button" value="ADD" onclick="javascript:addition();">
+		<input type="button" value="SUB" onclick="javascript:subtraction();"> -->
+		<input class="button" type="button" value="Calculate Now" onclick="javascript:multiply();">
+		<!-- <input type="button" value="DIV" onclick="javascript:division();">
+		<input type="button" value="MOD" onclick="javascript:modulus();"> -->
+
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
